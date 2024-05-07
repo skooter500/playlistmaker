@@ -6,7 +6,7 @@ API_NAME  =  'youtube'
 API_VERSION  =  'v3'
 SCOPES  = ['https://www.googleapis.com/auth/youtube']
 
-playlist_id ="PL1n0B6z4e_E5PgGZuffuY4bM_ZzeMRWD2"
+playlist_id ="PL1n0B6z4e_E7PV9bmzFDRow2Qoe1MOqvo"
 
 youtube =  Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 
@@ -36,7 +36,7 @@ for item in playlistItems:
 
 print('Deletion complete')
 
-with open('videos.txt') as ff:
+with open('videos1.txt') as ff:
         f = list(ff)        
         random.shuffle(f)
         for line in f:
@@ -45,7 +45,7 @@ with open('videos.txt') as ff:
                 part="snippet",
                 body={
                 "snippet": {
-                    "playlistId": "PL1n0B6z4e_E5PgGZuffuY4bM_ZzeMRWD2",
+                    "playlistId": playlist_id,
                     "position": 0,
                     "resourceId": {
                     "kind": "youtube#video",
